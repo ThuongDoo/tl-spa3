@@ -16,10 +16,10 @@ import PromoPopup from '../components/PromoPopup'
 export default function SitePage() {
   const { config, loading, error } = useWebsiteConfig()
   const data = normalizeWebsiteData(config)
-  const themeVars = useThemeVars(data?.themePrimary, data?.themeAccent)
+  const themeVars = useThemeVars(data?.theme?.themePrimary, data?.theme?.themeAccent)
 
   useEffect(() => {
-    if (data) document.title = data.pageTitle || data.brand
+    if (data) document.title = data.brand.pageTitle || data.brand.brand
   }, [data])
 
   if (loading) return null

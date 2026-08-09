@@ -14,7 +14,7 @@ export default function Navbar({ data }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const logoIsImage = isImageValue(data.logo)
+  const logoIsImage = isImageValue(data.brand.logo)
 
   return (
     <header
@@ -25,16 +25,16 @@ export default function Navbar({ data }) {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#home" className="flex items-center gap-2">
           {logoIsImage ? (
-            <img src={data.logo} alt={data.brand} className="h-8 w-8 rounded-full object-cover" />
-          ) : data.logo ? (
-            <span className="text-2xl leading-none">{data.logo}</span>
+            <img src={data.brand.logo} alt={data.brand.brand} className="h-8 w-8 rounded-full object-cover" />
+          ) : data.brand.logo ? (
+            <span className="text-2xl leading-none">{data.brand.logo}</span>
           ) : (
             <IconLotus className={`h-8 w-8 ${scrolled ? '' : 'text-cream'}`} style={scrolled ? { color: 'var(--c-600)' } : undefined} />
           )}
           <span
             className={`font-display text-xl tracking-wide ${scrolled ? 'text-charcoal' : 'text-cream'}`}
           >
-            {data.brand}
+            {data.brand.brand}
           </span>
         </a>
 
@@ -54,11 +54,11 @@ export default function Navbar({ data }) {
 
         <div className="hidden items-center gap-4 lg:flex">
           <a
-            href={`tel:${data.phone}`}
+            href={`tel:${data.brand.phone}`}
             className={`flex items-center gap-2 text-sm font-medium ${scrolled ? 'text-charcoal' : 'text-cream'}`}
           >
             <IconPhone className="h-4 w-4" />
-            {data.phone}
+            {data.brand.phone}
           </a>
           <a
             href="#booking"
@@ -86,7 +86,7 @@ export default function Navbar({ data }) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">
-              <span className="font-display text-lg text-charcoal">{data.brand}</span>
+              <span className="font-display text-lg text-charcoal">{data.brand.brand}</span>
               <button type="button" onClick={() => setOpen(false)} aria-label="Đóng menu">
                 <IconClose className="h-6 w-6 text-charcoal" />
               </button>

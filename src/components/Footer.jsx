@@ -3,7 +3,7 @@ import { isImageValue } from '../utils/imgSrc'
 import { IconLotus } from './icons'
 
 export default function Footer({ data }) {
-  const logoIsImage = isImageValue(data.logo)
+  const logoIsImage = isImageValue(data.brand.logo)
 
   return (
     <footer className="bg-[#201b16] py-16 text-cream/70">
@@ -12,13 +12,13 @@ export default function Footer({ data }) {
           <div>
             <div className="flex items-center gap-2">
               {logoIsImage ? (
-                <img src={data.logo} alt={data.brand} className="h-7 w-7 rounded-full object-cover" />
-              ) : data.logo ? (
-                <span className="text-xl leading-none">{data.logo}</span>
+                <img src={data.brand.logo} alt={data.brand.brand} className="h-7 w-7 rounded-full object-cover" />
+              ) : data.brand.logo ? (
+                <span className="text-xl leading-none">{data.brand.logo}</span>
               ) : (
                 <IconLotus className="h-7 w-7" style={{ color: 'var(--c-400)' }} />
               )}
-              <span className="font-display text-lg text-cream">{data.brand}</span>
+              <span className="font-display text-lg text-cream">{data.brand.brand}</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed">{data.footer.tagline}</p>
           </div>
@@ -48,7 +48,7 @@ export default function Footer({ data }) {
           <div>
             <h4 className="font-display text-base text-cream">Liên hệ</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li>Hotline: {data.phone}</li>
+              <li>Hotline: {data.brand.phone}</li>
               <li>Email: {data.footer.email}</li>
               <li>{data.booking.address1}</li>
               <li>{data.booking.address2}</li>

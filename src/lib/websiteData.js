@@ -1,12 +1,8 @@
 // Fills in the nested defaults spa-3's UI components expect (empty strings/arrays instead of
 // undefined) so a `websites/{id}.config` doc that hasn't set every field yet still renders.
 const DEFAULTS = {
-  themePrimary: '',
-  themeAccent: '',
-  logo: '',
-  brand: '',
-  phone: '',
-  pageTitle: '',
+  theme: { themePrimary: '', themeAccent: '' },
+  brand: { logo: '', brand: '', phone: '', pageTitle: '' },
   hero: {
     badge: '',
     headline1: '',
@@ -44,6 +40,8 @@ export function normalizeWebsiteData(config) {
   return {
     ...DEFAULTS,
     ...config,
+    theme: { ...DEFAULTS.theme, ...config.theme },
+    brand: { ...DEFAULTS.brand, ...config.brand },
     hero: { ...DEFAULTS.hero, ...config.hero },
     services: { ...DEFAULTS.services, ...config.services, items: config.services?.items ?? [] },
     about: { ...DEFAULTS.about, ...config.about, stats: config.about?.stats ?? [] },
