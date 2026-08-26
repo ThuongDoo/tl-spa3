@@ -21,12 +21,20 @@ export default function Testimonials({ data }) {
               </div>
               <p className="mt-5 text-sm leading-relaxed text-charcoal/75">“{r.quote}”</p>
               <div className="mt-6 flex items-center gap-3">
-                <div
-                  className="flex h-11 w-11 items-center justify-center rounded-full font-display"
-                  style={{ background: 'var(--c-100)', color: 'var(--c-600)' }}
-                >
-                  {r.name.charAt(0)}
-                </div>
+                {r.avatar ? (
+                  <img
+                    src={r.avatar}
+                    alt={r.name}
+                    className="h-11 w-11 rounded-full object-cover"
+                  />
+                ) : (
+                  <div
+                    className="flex h-11 w-11 items-center justify-center rounded-full font-display"
+                    style={{ background: 'var(--c-100)', color: 'var(--c-600)' }}
+                  >
+                    {r.name.charAt(0)}
+                  </div>
+                )}
                 <div>
                   <p className="text-sm font-semibold text-charcoal">{r.name}</p>
                   <p className="text-xs text-charcoal/55">{r.role}</p>

@@ -126,18 +126,21 @@ export const SAMPLE_WEBSITE_CONFIG = {
       {
         name: "Thu Hà",
         role: "Khách hàng thân thiết",
+        avatar: "https://i.pravatar.cc/150?img=47",
         quote:
           "Không gian yên tĩnh, chuyên viên tay nghề cao. Sau mỗi buổi massage mình cảm thấy nhẹ nhõm hẳn, ngủ ngon hơn rất nhiều.",
       },
       {
         name: "Minh Quân",
         role: "Nhân viên văn phòng",
+        avatar: "https://i.pravatar.cc/150?img=12",
         quote:
           "Đặt lịch dễ dàng, nhân viên tư vấn nhiệt tình. Gói đá nóng trị liệu giúp mình giảm hẳn đau vai gáy do ngồi máy tính cả ngày.",
       },
       {
         name: "Ngọc Anh",
         role: "Khách hàng mới",
+        avatar: "https://i.pravatar.cc/150?img=32",
         quote:
           "Lần đầu trải nghiệm massage cặp đôi ở đây, không gian riêng tư và ấm cúng. Chắc chắn sẽ quay lại cùng gia đình.",
       },
