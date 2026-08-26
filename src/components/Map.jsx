@@ -1,6 +1,9 @@
 export default function Map({ data }) {
-  const query = encodeURIComponent(`${data.brand.brand} ${data.booking.address1}`)
-  const src = data.map.embedUrl || `https://www.google.com/maps?q=${query}&output=embed`
+  const query = encodeURIComponent(
+    `${data.brand.brand} ${data.booking.address1}`,
+  );
+  const src =
+    data.map.embedUrl || `https://www.google.com/maps?q=${query}&output=embed`;
 
   return (
     <section className="bg-[#201b16]">
@@ -12,5 +15,5 @@ export default function Map({ data }) {
         referrerPolicy="no-referrer-when-downgrade"
       />
     </section>
-  )
+  );
 }
